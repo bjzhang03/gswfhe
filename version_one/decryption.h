@@ -15,7 +15,7 @@
 using namespace std;
 using namespace NTL;
 
-ZZ_p Decryption(parameters & parameter,userkeys &userkey,mat_ZZ_p ciphertext)
+ZZ Decryption(parameters & parameter,userkeys &userkey,mat_ZZ_p ciphertext)
 {
 	vec_ZZ_p V=PowOf2_vec(parameter,userkey.Get_SK());
 
@@ -26,17 +26,17 @@ ZZ_p Decryption(parameters & parameter,userkeys &userkey,mat_ZZ_p ciphertext)
 
 	//cout<<"result = "<<result<<endl;
 
-	//ZZ m;
-	//conv(m,result[parameter.Get_log()-1]);
+	ZZ m;
+	conv(m,result[parameter.Get_log()-1]);
 
-	ZZ_p m=result[parameter.Get_log()-1];
+	//ZZ_p m=result[parameter.Get_log()-1];
 	cout<<"m = "<<m<<endl;
 
-	ZZ_p MUL;
+	ZZ MUL;
 	conv(MUL,1);
 	for(int i=1;i<parameter.Get_log();i++)
 	{
-		ZZ_p Temp;
+		ZZ Temp;
 		conv(Temp,2);
 		MUL=MUL*Temp;
 	}

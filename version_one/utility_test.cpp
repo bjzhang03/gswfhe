@@ -103,6 +103,9 @@ int main()
 
 	cout<<"Flatten_mat = "<<Flatten_mat(p,TestMatresult)<<endl;
 
+	mat_ZZ_p RData=GenerateRandomMat(p,10,6);
+	cout<<"RData = "<<RData<<endl;
+
 	
 
 	return 0;

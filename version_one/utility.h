@@ -250,7 +250,12 @@ mat_ZZ_p GenerateRandomMat(parameters & parameter,long rows,long cols)
 	{
 		for(int j=0;j<cols;j++)
 		{
-			random(Temp);
+			int RandR=rand();
+			if(0==RandR%2)
+				conv(Temp,0);
+			else
+				conv(Temp,1);
+
 			result[i][j]=Temp;
 		}
 	}

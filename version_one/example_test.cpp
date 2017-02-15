@@ -16,18 +16,18 @@ using namespace NTL;
 
 int main()
 {
-	parameters p(8,5,6);
+	parameters p(128,1000,100);
 	p.PrintParameters();
 
-	userkeys userkey(p,5,10);
+	userkeys userkey(p,3.2,0);
 
-	long message = 0;
+	long message = 1;
 	cout<<"message = "<<message<<endl;
 	mat_ZZ_p ciphertext=Encryption(p,userkey,message);
 
 	//cout<<"ciphertext = "<<ciphertext<<endl;
 
-	ZZ_p plaintext=Decryption(p,userkey,ciphertext);
+	ZZ plaintext=Decryption(p,userkey,ciphertext);
 
 	cout<<"plaintext = "<<plaintext<<endl;
 
