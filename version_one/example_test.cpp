@@ -29,7 +29,7 @@ int main()
 
 	for(auto it=keyslength.begin();it!=keyslength.end();it++)
 	{
-		parameters p(*it,100,50);
+		parameters p(*it,100,60);
 		p.PrintParameters();
 
 		userkeys userkey(p,3.2,0);
