@@ -21,15 +21,16 @@ using namespace NTL;
 int main()
 {
 
-	vector<int> keyslength={64,72,80,88,96,104,112,120,128};
+	vector<int> nlength={50,60,70,80,90,100};
 
 	ofstream fout;
-	fout.open("RESULT.txt",ofstream::out);
+	fout.open("ndata.txt",ofstream::out);
 	fout.close();
 
-	for(auto it=keyslength.begin();it!=keyslength.end();it++)
+	for(auto it=nlength.begin();it!=nlength.end();it++)
 	{
-		parameters p(*it,100,60);
+		parameters p(72,150,*it);
+		cout<<endl<<endl;
 		p.PrintParameters();
 
 		userkeys userkey(p,3.2,0);
@@ -73,8 +74,8 @@ int main()
 
 			cout<<"plaintext = "<<plaintext<<endl;
 		}
-		fout.open("RESULT.txt",ofstream::app);
-		fout<<"keys = "<<*it<<endl;
+		fout.open("ndata.txt",ofstream::app);
+		fout<<"ndata = "<<*it<<endl;
 		fout<<"Encryption Times :"<<endl;
 
 		double sum = 0;
