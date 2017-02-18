@@ -21,6 +21,7 @@ using namespace NTL;
 using namespace std;
 
 //generate gauss noise function
+/*
 ZZ GaussRand(double var,double mea)
 {
 	static double V1,V2,S;
@@ -55,6 +56,26 @@ ZZ GaussRand(double var,double mea)
 	ZZ result;
 	conv(result,LIX);
 
+	return result;
+}
+*/
+
+ZZ GaussRand(double var,double mea)
+{
+	static double const Pi=4.0*atan(1.0);//Pi=3.1415..
+
+	double r1=(double)rand()/RAND_MAX;
+	double r2=(double)rand()/RAND_MAX;
+
+	double theta=2*Pi*r1;
+	double X=sqrt(-2.0*log(r2));
+
+	X=X*var+mea;
+
+	long LIX=(long)floor(X+0.5);
+
+	ZZ result;
+	conv(result,LIX);
 	return result;
 }
 

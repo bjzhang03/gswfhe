@@ -30,7 +30,7 @@ ZZ Decryption(parameters & parameter,userkeys &userkey,mat_ZZ_p ciphertext)
 	conv(m,result[parameter.Get_log()-1]);
 
 	//ZZ_p m=result[parameter.Get_log()-1];
-	cout<<"m = "<<m<<endl;
+	//cout<<"m = "<<m<<endl;
 
 	ZZ MUL;
 	conv(MUL,1);
@@ -40,7 +40,7 @@ ZZ Decryption(parameters & parameter,userkeys &userkey,mat_ZZ_p ciphertext)
 		conv(Temp,2);
 		MUL=MUL*Temp;
 	}
-	cout<<"MUL = "<<MUL<<endl;
+	//cout<<"MUL = "<<MUL<<endl;
 
 
 	return m/MUL;
